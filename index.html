@@ -58,6 +58,7 @@
       clone.querySelector("h3.demo-card__subtitle").textContent = myJson.results[0].name.title + " " + myJson.results[0].name.last + " " + myJson.results[0].name.first;
       let theirPic = myJson.results[0].picture.large;
       clone.querySelector("div.mdc-card__media").style.backgroundImage = 'url("'+theirPic+'")';
+      clone.querySelector("div.demo-card__secondary").textContent = myJson.results[0].email + " " + myJson.results[0].dob.date;
       document.body.appendChild(clone);
     });
 
