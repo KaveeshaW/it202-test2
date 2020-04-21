@@ -45,14 +45,16 @@
   <script>
     
     const url = "https://randomuser.me/api/?format=json&results=6&gender=male&country=Canada";
-    let card = 
         
     fetch(url)
     .then((response) => {
       return response.json();
     })
     .then((myJson) => {
-      console.log(myJson);  
+      let clone = document.querySelector("div.template").cloneNode(true);
+      clone.classList.remove("template");
+      console.log(clone);
+      document.querySelector("h2.demo-card__title").textContent = "wow";
     });
 
     
