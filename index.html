@@ -44,7 +44,7 @@
     
   <script>
     
-    const url = "https://randomuser.me/api/?format=json&results=6&gender=male&country=Canada";
+    const url = "https://randomuser.me/api/?format=json";
         
     fetch(url)
     .then((response) => {
@@ -53,8 +53,9 @@
     .then((myJson) => {
       let clone = document.querySelector("div.template").cloneNode(true);
       clone.classList.remove("template");
-      console.log(clone);
-      document.querySelector("h2.demo-card__title").textContent = "wow";
+      console.log(myJson.results);
+      clone.querySelector("h2.demo-card__title").textContent = myJson.results[0].nat + " " + myJson.results[0].name.title + " " + myJson.results[0].name.first + " " + myJson.results[0].name.last;
+      document.body.appendChild(clone);
     });
 
     
